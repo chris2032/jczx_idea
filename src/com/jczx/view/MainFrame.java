@@ -40,9 +40,10 @@ public class MainFrame extends JFrame {
         LoginService ls = (LoginService)BeanFactory.getBean("loginService");
         Uh uh = ls.getUhByNameAndPassword(m);
         if(uh == null){
-            System.out.println("登录失败");
         }else{
-            System.out.println("登录成功"+uh);
+            menuBar1.setVisible(true);
+            this.getContentPane().setVisible(false);
+
         }
     }
 
@@ -64,11 +65,12 @@ public class MainFrame extends JFrame {
 
         //======== menuBar1 ========
         {
+            menuBar1.setEnabled(false);
+            menuBar1.setVisible(false);
 
             //======== menu1 ========
             {
                 menu1.setText("\u6587\u4ef6");
-                menu1.setEnabled(false);
             }
             menuBar1.add(menu1);
         }
