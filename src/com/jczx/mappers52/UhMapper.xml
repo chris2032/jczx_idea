@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jczx.mappers52.UhMapper">
+
+	<resultMap type="Uh" id="UhResult">
+		<id property="id" column="id"/>
+		<result property="yh" column="用户"/>
+		<result property="mm" column="密码"/>
+	</resultMap>
+	
+	<select id="getUhByNameAndPassword" parameterType="Map" resultMap="UhResult" >
+		SELECT * FROM [用户] t WHERE t.[用户] = #{username} AND t.[密码] = #{password}
+	</select>
+	
+</mapper> 
